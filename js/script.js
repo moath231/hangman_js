@@ -15,14 +15,19 @@ lettersarray.forEach((textnote) => {
 
 const world = {
   car: ["BMW", "Audi", "Jeep", "Kia", "Smart", "Tesla", "Volvo"],
-  country: ["Afghanistan", "Syria", "jordan", "Iraq", "Japan", "India"],
-  pepole: ["moath", "ahmad", "hadi", "mahammad", "maen", "majd"],
+  country: ["Egypt", "Syria", "jordan", "Iraq", "Japan", "India"],
 };
 
 const hint = {
   car: ["BMW", "Audi", "Jeep", "Kia", "Smart", "Tesla", "Volvo"],
-  country: ["Its capital is Kabul", "Its capital is Damascus", "Its capital is amman", "Its capital is Baghdad", "Its capital is Tokyo", "Its capital is Delhi"],
-  pepole: ["moath", "ahmad", "hadi", "mahammad", "maen", "majd"],
+  country: [
+    "Its capital is Cairo",
+    "Its capital is Damascus",
+    "Its capital is amman",
+    "Its capital is Baghdad",
+    "Its capital is Tokyo",
+    "Its capital is Delhi",
+  ],
 };
 
 //
@@ -35,21 +40,21 @@ let randcatguryvalue = world[randcatgury];
 
 let randcatrow = Math.floor(Math.random() * randcatguryvalue.length);
 let randvalueresult = randcatguryvalue[randcatrow];
-//world
-//
+/*
+
+*/
 
 
-//
-//hint
-let hintstatment = hint[randcatgury][randcatrow]
-//hint
-//
-console.log(hintstatment);
+let hintstatment = hint[randcatgury][randcatrow];
 document.querySelector(".hinttext").innerHTML += hintstatment;
+document.querySelector(".hinttext").style.color = "#1f78d4";
+document.querySelector(".hinttext span").style.color = "black";
 
 
 
-document.querySelector(".game-info .category span").innerHTML = `${randcatgury}`;
+document.querySelector(
+  ".game-info .category span"
+).innerHTML = `${randcatgury}`;
 
 let letters_guessvalue = [...randvalueresult];
 let letters_guess = document.querySelector(".container .letters-guess");
@@ -100,24 +105,98 @@ document.addEventListener("click", (e) => {
         letterscontainer.classList.add("finshed");
         failendgame();
       }
-
-    }else{
+    } else {
       // success
       document.getElementById("success").play();
     }
 
-    if(letters_guessvalue.length === numcorrect){
+    if (letters_guessvalue.length === numcorrect) {
       letterscontainer.classList.add("finshed");
       successendgame();
     }
+  }
+});
 
-
-}});
-
-function failendgame(){
+function failendgame() {
   console.log("fall");
+
+  //
+  let span = document.createElement("span");
+  let spantext = document.createTextNode("Game Over");
+  span.appendChild(spantext);
+  span.style.fontSize = "30px";
+  span.style.marginRight = "10px";
+  //
+  //
+  let span2 = document.createElement("span");
+  let spantext2 = document.createTextNode(`${randvalueresult}`);
+  span2.appendChild(spantext2);
+  span2.style.color = "#1f78d4";
+  span2.style.marginLeft = "10px";
+  //
+
+  let falldivtext = ` ,the word is `;
+
+  let lastmassage = document.createElement("div");
+  lastmassage.className = "lastmassage";
+  lastmassage.appendChild(span);
+  lastmassage.appendChild(document.createTextNode(falldivtext));
+  lastmassage.appendChild(span2);
+  lastmassage.style.fontSize = "25px";
+
+  //again <i class="fa-solid fa-rotate-left"></i>
+  let againD = document.createElement("div");
+  againD.className = "again";
+  let i1 = document.createElement("i");
+  i1.className = "fa-solid";
+  i1.classList.add("fa-rotate-left");
+  i1.addEventListener("click", () => location.reload());
+  againD.appendChild(i1);
+
+  lastmassage.appendChild(againD);
+
+  //
+
+  document.querySelector(".container").appendChild(lastmassage);
 }
 
-function successendgame(){
+function successendgame() {
   console.log("success");
+
+  //
+  let span = document.createElement("span");
+  let spantext = document.createTextNode("Congratulations");
+  span.appendChild(spantext);
+  span.style.fontSize = "23px";
+  span.style.marginRight = "3px";
+  span.style.color = "green";
+  //
+  //
+  let span2 = document.createElement("span");
+  let spantext2 = document.createTextNode(`${numofwrrong}`);
+  span2.appendChild(spantext2);
+  span2.style.color = "#1f78d4";
+  span2.style.marginLeft = "5px";
+  //
+  let successivtext = ` , you win! number of wrong `;
+
+  let lastmassage = document.createElement("div");
+  lastmassage.className = "lastmassage";
+  lastmassage.appendChild(span);
+  lastmassage.appendChild(document.createTextNode(successivtext));
+  lastmassage.appendChild(span2);
+  lastmassage.style.fontSize = "20px";
+
+  //again <i class="fa-solid fa-rotate-left"></i>
+  let againD = document.createElement("div");
+  againD.className = "again";
+  let i1 = document.createElement("i");
+  i1.className = "fa-solid";
+  i1.classList.add("fa-rotate-left");
+  i1.addEventListener("click", () => location.reload());
+  againD.appendChild(i1);
+  lastmassage.appendChild(againD);
+  //
+
+  document.querySelector(".container").appendChild(lastmassage);
 }
