@@ -14,12 +14,16 @@ lettersarray.forEach((textnote) => {
 });
 
 const world = {
-  car: ["BMW", "Audi", "Jeep", "Kia", "Smart", "Tesla", "Volvo"],
-  country: ["Egypt", "Syria", "jordan", "Iraq", "Japan", "India"],
+  country: ["Egypt",
+    "Syria",
+    "jordan",
+    "Iraq",
+    "Japan",
+    "India"
+  ],
 };
 
 const hint = {
-  car: ["BMW", "Audi", "Jeep", "Kia", "Smart", "Tesla", "Volvo"],
   country: [
     "Its capital is Cairo",
     "Its capital is Damascus",
@@ -118,7 +122,7 @@ document.addEventListener("click", (e) => {
 });
 
 function failendgame() {
-  console.log("fall");
+
 
   //
   let span = document.createElement("span");
@@ -144,6 +148,15 @@ function failendgame() {
   lastmassage.appendChild(span2);
   lastmassage.style.fontSize = "25px";
 
+  var x = window.matchMedia("(max-width: 461px)")
+  if (x.matches) { // If media query matches
+    lastmassage.style.fontSize = "20px";
+    span.style.fontSize = "25px";
+  } else if("(max-width: 635px)"){
+    lastmassage.style.fontSize = "24px";
+    span.style.fontSize = "29px";
+  }
+
   //again <i class="fa-solid fa-rotate-left"></i>
   let againD = document.createElement("div");
   againD.className = "again";
@@ -161,7 +174,7 @@ function failendgame() {
 }
 
 function successendgame() {
-  console.log("success");
+
 
   //
   let span = document.createElement("span");
@@ -186,6 +199,15 @@ function successendgame() {
   lastmassage.appendChild(document.createTextNode(successivtext));
   lastmassage.appendChild(span2);
   lastmassage.style.fontSize = "20px";
+
+
+  // var x = window.matchMedia("(max-width: 897px)")
+  if (window.matchMedia("(max-width: 640px)"))  {
+    lastmassage.style.width = "100%";
+    lastmassage.style.fontSize = "17px";
+    span.style.fontSize = "20px";
+  }
+
 
   //again <i class="fa-solid fa-rotate-left"></i>
   let againD = document.createElement("div");

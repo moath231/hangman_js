@@ -33,6 +33,14 @@ ul {
   margin-right: auto;
 }
 
+@media (max-width: 879px) {
+  .container {
+    padding-left: 0;
+    padding-right: 0;
+    margin-left: 0;
+    margin-right: 0;
+  }
+}
 .container {
   position: relative;
 }
@@ -214,6 +222,39 @@ ul {
   cursor: pointer;
   margin-bottom: 10px;
 }
+@media (max-width: 849px) {
+  .container .row .letters .boxletter {
+    margin-bottom: 4px;
+    width: 45px;
+    height: 45px;
+    line-height: 45px;
+  }
+}
+@media (max-width: 619px) {
+  .container .row .letters .boxletter {
+    margin-bottom: 4px;
+    width: 40px;
+    height: 40px;
+    line-height: 40px;
+  }
+}
+@media (max-width: 469px) {
+  .container .row .letters .boxletter {
+    margin-bottom: 4px;
+    width: 35px;
+    height: 35px;
+    line-height: 35px;
+  }
+}
+@media (max-width: 429px) {
+  .container .row .letters .boxletter {
+    margin-bottom: 4px;
+    width: 32px;
+    height: 32px;
+    line-height: 30px;
+    font-size: 20px;
+  }
+}
 .container .row .letters .boxletter.clicked {
   background-color: #ccc;
   cursor: none;
@@ -239,6 +280,28 @@ ul {
   color: blue;
   text-transform: uppercase;
 }
+@media (max-width: 879px) {
+  .container .letters-guess {
+    gap: 10px;
+    padding: 10px 0px;
+  }
+  .container .letters-guess .box {
+    width: 60px;
+    height: 60px;
+    font-size: 300%;
+  }
+}
+@media (max-width: 499px) {
+  .container .letters-guess {
+    gap: 5px;
+    padding: 5px 0px;
+  }
+  .container .letters-guess .box {
+    width: 50px;
+    height: 50px;
+    font-size: 250%;
+  }
+}
 .container .lastmassage {
   position: absolute;
   left: 50%;
@@ -263,29 +326,27 @@ ul {
   top: 70%;
   transform: translate(-50%, -50%);
 }
-
-@media (min-width: 268px) {
-  .container {
-    width: 394px;
+@media (max-width: 635px) {
+  .container .lastmassage {
+    font-size: 15px;
+    width: 75%;
   }
 }
-@media (min-width: 540px) {
-  .container {
-    width: 530px;
+@media (max-width: 558px) {
+  .container .lastmassage {
+    font-size: 13px;
+    width: 85%;
   }
 }
-@media (min-width: 768px) {
-  .container {
-    width: 730px;
+@media (max-width: 491px) {
+  .container .lastmassage {
+    font-size: 13px;
+    width: 95%;
   }
 }
-@media (min-width: 992px) {
-  .container {
-    width: 945px;
-  }
-}
-@media (min-width: 1200px) {
-  .container {
-    width: 1165px;
+@media (max-width: 400px) {
+  .container .lastmassage {
+    font-size: 10px;
+    width: 100%;
   }
 }/*# sourceMappingURL=style.css.map */
