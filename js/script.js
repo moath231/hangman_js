@@ -37,7 +37,7 @@ let randcatrow = Math.floor(Math.random() * randcatguryvalue.length);
 let randvalueresult = randcatguryvalue[randcatrow];
 //world
 //
-console.log(randvalueresult);
+
 
 //
 //hint
@@ -46,6 +46,8 @@ let hintstatment = hint[randcatgury][randcatrow]
 //
 console.log(hintstatment);
 document.querySelector(".hinttext").innerHTML += hintstatment;
+
+
 
 document.querySelector(".game-info .category span").innerHTML = `${randcatgury}`;
 
