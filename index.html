@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- * * main style sheet  -->
+  <link rel="stylesheet" href="./style/style.css">
+  <!-- * * fontawsome file -->
+  <link rel="stylesheet" href="./style/all.min.css">
+  <!-- * * normalize sheet file -->
+  <link rel="stylesheet" href="./style/normalize.css">
+
+  <!-- * * google font -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600;700;800&display=swap"
+    rel="stylesheet">
+  <link rel="shortcut icon" href="#">
+
+  <title>dashboard</title>
+</head>
+
+<body>
+  <header></header>
+
+  <main>
+    <div class="container">
+      <div class="game-info">
+        <div class="game-name">Hangman</div>
+        <div class="category">
+          Word From: <span></span>
+        </div>
+      </div>
+      <div class="hinttext"><span>hint:</span></div>
+      <hr>
+      <div class="row">
+        <div class="hangman-draw">
+          <div class="the-draw">
+            <div class="the-stand"></div>
+            <div class="the-hang"></div>
+            <div class="the-rope"></div>
+            <div class="the-man">
+              <div class="head"></div>
+              <div class="body"></div>
+              <div class="hands"></div>
+              <div class="legs"></div>
+            </div>
+          </div>
+        </div>
+        <div class="letters"></div>
+      </div>
+      <hr>
+      <div class="letters-guess"></div>
+    </div>
+    <audio id="success" src="./audio/success.mp3" preload="auto"></audio>
+    <audio id="fail" src="./audio/fail.wav" preload="auto"></audio>
+    </main>
+
+  <footer></footer>
+
+  <script src="./js/script.js"></script>
+</body>
+
+</html>
